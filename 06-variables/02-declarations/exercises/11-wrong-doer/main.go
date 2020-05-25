@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Wrong doer
 //
@@ -21,8 +23,8 @@ package main
 
 func main() {
 	// First print it:
-	// fmt.Println(?)
+	fmt.Println(it)
 
 	// Then declare it:
-	// var ? ?
+	var it int
 }
