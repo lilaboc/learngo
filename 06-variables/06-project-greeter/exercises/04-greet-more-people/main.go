@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Greet More People
 //
@@ -33,4 +38,9 @@ func main() {
 	// BONUS #1:
 	// Observe the error if you pass less then 3 arguments.
 	// Search on the web how to solve that.
+	fmt.Println("There are ", len(os.Args)-1, "people!")
+	fmt.Println("Hello great", os.Args[1], "!")
+	fmt.Println("Hello great", os.Args[2], "!")
+	fmt.Println("Hello great", os.Args[3], "!")
+	fmt.Println("Nice to meet you all.")
 }
