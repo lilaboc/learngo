@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Optimal Types
 //
@@ -24,7 +26,7 @@ package main
 //
 //  As I said in the lectures that, premature optimization
 //  is not a good thing.
-// ---------------------------------------------------------
+// ----------------------------- ----------------------------
 
 func main() {
 	// DONT FORGET: There are also unsigned data types.
@@ -36,16 +38,30 @@ func main() {
 	// ---
 
 	// an english letter (search web for: ascii control code)
+	var letter byte = 'A'
+	fmt.Println(letter)
 
 	// a non-english letter (search web for: unicode codepoint)
+	var chineseletter rune = '你'
+	fmt.Println(chineseletter)
 
 	// a year in 4 digits like 2040
+	var year uint16 = 2040
+	fmt.Println(year)
 
 	// a month in 2 digits: 1 to 12
+	var month uint8 = 12
+	fmt.Println(month)
 
 	// the speed of the light
+	var speed uint32 = 30 * 10000
+	fmt.Println(speed)
 
 	// angle of a circle
+	var angle float32 = 12
+	fmt.Println(angle)
 
 	// PI number: 3.141592653589793
+	var pi float64 = 3.141592653589793
+	fmt.Println(pi)
 }

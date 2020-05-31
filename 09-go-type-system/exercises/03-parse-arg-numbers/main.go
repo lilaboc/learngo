@@ -67,14 +67,22 @@ func main() {
 	// --------------------------------------
 
 	// 1. Get an int16 value using ParseInt and convert it and print it
+	val16, _ := strconv.ParseInt(os.Args[2], 10, 16)
+	fmt.Println("int16 value is:", val16)
 
 	// 2. Get an int32 value using ParseInt and convert it and print it
+	val32, _ := strconv.ParseInt(os.Args[3], 10, 32)
+	fmt.Println("int32 value is:", val32)
 
 	// 3. Get an int64 value using ParseInt and convert it and print it
+	val64, _ := strconv.ParseInt(os.Args[4], 10, 64)
+	fmt.Println("int64 value is:", val64)
 
 	// 4. Get an int8 value using ParseInt and convert it and print it
 	//    But this time, get the value in bits.
 	//
 	//    For example : 00000100
 	//    Should print: 4
+	valbit, _ := strconv.ParseInt(os.Args[5], 2, 8)
+	fmt.Println("byte value is:", valbit)
 }
