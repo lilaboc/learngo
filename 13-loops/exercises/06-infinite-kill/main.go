@@ -61,6 +61,7 @@ import (
 func main() {
 	for {
 		choices := "\\-/|"
+		rand.Seed(time.Now().UnixNano())
 		fmt.Printf("\r %c Please Wait. Processing....", choices[rand.Intn(len(choices))])
 		time.Sleep(250 * time.Millisecond)
 	}
