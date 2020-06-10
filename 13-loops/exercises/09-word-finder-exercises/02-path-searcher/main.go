@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Path Searcher
 //
@@ -80,4 +86,15 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if len(os.Args) == 1 {
+		fmt.Println("Give me a path")
+		return
+	}
+	q := os.Args[1]
+	lq := strings.ToLower(q)
+	for _, w := range strings.Split(os.Getenv("PATH"), string(os.PathListSeparator)) {
+		if strings.Contains(strings.ToLower(w), lq) {
+			fmt.Println(w)
+		}
+	}
 }
