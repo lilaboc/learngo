@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Declare empty arrays
 //
@@ -59,4 +61,49 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	//    1. The names of your best three friends (names array)
+	names := [3]string{}
+	//
+	//    2. The distances to five different distances (distances array)
+	distances := [5]int{}
+	//
+	//    3. A data data with five bytes of capacity (data array)
+	data := [5]byte{}
+	//
+	//    4. Currency exchange ratios only for a single currency (ratios array)
+	ratios := [1]float32{}
+	//
+	//    5. Up/Down status of four different web servers (alives array)
+	//
+	alives := [4]bool{}
+	//    6. A byte array that doesn't occupy memory space (zero array)
+	zero := [0]byte{}
+
+	// 1. Declare and print the arrays with their types.
+	fmt.Printf("names    : %#v\n", names)
+	fmt.Printf("distances: %#v\n", distances)
+	fmt.Printf("data     : %#v\n", data)
+	fmt.Printf("ratios   : %#v\n", ratios)
+	fmt.Printf("alives   : %#v\n", alives)
+	fmt.Printf("zero     : %#v\n", zero)
+
+	//  2. Print only the types of the same arrays.
+	fmt.Println()
+	fmt.Printf("names    : %T\n", names)
+	fmt.Printf("distances: %T\n", distances)
+	fmt.Printf("data     : %T\n", data)
+	fmt.Printf("ratios   : %T\n", ratios)
+	fmt.Printf("alives   : %T\n", alives)
+	fmt.Printf("zero     : %T\n", zero)
+
+	// 3. Print only the elements of the same arrays.
+	fmt.Println()
+	fmt.Printf("names    : %q\n", names)
+	fmt.Printf("distances: %d\n", distances)
+	fmt.Printf("data     : %d\n", data)
+	fmt.Printf("ratios   : %.2f\n", ratios)
+	fmt.Printf("alives   : %t\n", alives)
+	fmt.Printf("zero     : %d\n", zero)
+
 }

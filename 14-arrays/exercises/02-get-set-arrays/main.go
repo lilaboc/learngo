@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Get and Set Array Elements
 //
@@ -123,4 +125,61 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	names := [3]string{"a", "b", "c"}
+	distances := [5]int{1, 2, 3, 4, 5}
+	data := [5]byte{1, 2, 3, 4, 5}
+	ratios := [1]float32{1.2}
+	alives := [4]bool{true, false, true, false}
+	zero := [0]byte{}
+
+	for i := 0; i < len(names); i++ {
+		fmt.Printf("%v ", names[i])
+	}
+	fmt.Println()
+	for i := 0; i < len(distances); i++ {
+		fmt.Printf("%v ", distances[i])
+	}
+	fmt.Println()
+	for i := 0; i < len(data); i++ {
+		fmt.Printf("%v ", data[i])
+	}
+	fmt.Println()
+	for i := 0; i < len(ratios); i++ {
+		fmt.Printf("%v ", ratios[i])
+	}
+	fmt.Println()
+	for i := 0; i < len(alives); i++ {
+		fmt.Printf("%v ", alives[i])
+	}
+	fmt.Println()
+	for i := 0; i < len(zero); i++ {
+		fmt.Printf("%v ", zero[i])
+	}
+	fmt.Println()
+	for _, v := range names {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+
+	for _, v := range distances {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range data {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range ratios {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range alives {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range zero {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
 }

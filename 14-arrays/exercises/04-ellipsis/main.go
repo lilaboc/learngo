@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Refactor to Ellipsis
 //
@@ -23,4 +25,36 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	names := [...]string{"a", "b", "c"}
+	distances := [...]int{1, 2, 3, 4, 5}
+	data := [...]byte{1, 2, 3, 4, 5}
+	ratios := [...]float32{1.2}
+	alives := [...]bool{true, false, true, false}
+	zero := [...]byte{}
+
+	for _, v := range names {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+
+	for _, v := range distances {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range data {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range ratios {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range alives {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
+	for _, v := range zero {
+		fmt.Printf("%v ", v)
+	}
+	fmt.Println()
 }
