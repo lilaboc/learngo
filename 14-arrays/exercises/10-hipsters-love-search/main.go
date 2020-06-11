@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Hipster's Love Bookstore Search Engine
 //
@@ -59,4 +65,29 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	books := [...]string{
+		"Kafka's Revenge",
+		"Stay Golden",
+		"Everythingship",
+		"Kafka's Revenge 2nd Edition",
+	}
+	if len(os.Args) == 1 {
+		fmt.Println("Tell me a book title")
+		return
+	}
+	q := strings.ToLower(os.Args[1])
+	found := false
+	for _, book := range books {
+		if strings.Contains(strings.ToLower(book), q) {
+			if !found {
+				found = true
+				fmt.Println("Search Result:")
+			}
+			fmt.Printf("+ %s\n", book)
+		}
+	}
+	if !found {
+		fmt.Printf("We don't have the book: %v", os.Args[1])
+	}
+
 }
