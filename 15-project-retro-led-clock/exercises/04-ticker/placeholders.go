@@ -101,3 +101,11 @@ var colon = placeholder{
 var digits = [...]placeholder{
 	zero, one, two, three, four, five, six, seven, eight, nine,
 }
+
+var empty = placeholder{
+	"  ",
+	"  ",
+	"  ",
+	"  ",
+	"  ",
+}

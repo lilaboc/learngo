@@ -84,7 +84,9 @@ import (
 func main() {
 	screen.Clear()
 
-	for {
+	counter := 0
+	for ; ; counter++ {
+		screen.Clear()
 		screen.MoveTopLeft()
 
 		now := time.Now()
@@ -97,6 +99,33 @@ func main() {
 			colon,
 			digits[sec/10], digits[sec%10],
 		}
+		step := counter % 16
+		newclock := clock
+		for i := 0; i < len(newclock); i++ {
+			newclock[i] = empty
+		}
+
+		for o := 0; o < len(clock); o++ {
+			if step < 8 {
+				if o+step < len(clock) {
+					newclock[o] = clock[o+step]
+				} else {
+					newclock[o] = empty
+				}
+
+			} else {
+				v := step - 8
+				if o <= v {
+					newclock[len(clock)-v+o-1] = clock[o]
+				} else if o >= len(clock)-v-1 {
+					continue
+				} else {
+					newclock[o] = empty
+				}
+
+			}
+		}
+		clock = newclock
 
 		for line := range clock[0] {
 			for index, digit := range clock {
