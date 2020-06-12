@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Housing Prices
 //
@@ -76,4 +82,33 @@ Istanbul,500,10,5,1000000`
 
 		separator = ","
 	)
+
+	for _, v := range strings.Split(header, separator) {
+		fmt.Printf("%-15s", v)
+	}
+	fmt.Printf("\n")
+
+	locations := []string{}
+	sizes := []int{}
+	beds := []int{}
+	baths := []int{}
+	prices := []int{}
+	fmt.Println("===========================================================================")
+	for _, row := range strings.Split(data, "\n") {
+		data := strings.Split(row, separator)
+		locations = append(locations, data[0])
+		size, _ := strconv.Atoi(data[1])
+		sizes = append(sizes, size)
+		bed, _ := strconv.Atoi(data[2])
+		beds = append(beds, bed)
+		bath, _ := strconv.Atoi(data[3])
+		baths = append(baths, int(bath))
+		price, _ := strconv.Atoi(data[4])
+		prices = append(prices, int(price))
+	}
+	for i := 0; i < len(locations); i++ {
+		fmt.Printf("%-15s%-15d%-15d%-15d%-15d\n", locations[i], sizes[i], beds[i], baths[i], prices[i])
+
+	}
+
 }
