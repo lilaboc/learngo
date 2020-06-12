@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Append #3 — Fix the problems
 //
@@ -24,12 +26,12 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// toppings := []int{"black olives", "green peppers"}
+	toppings := []string{"black olives", "green peppers"}
 
-	// var pizza [3]string
-	// append(pizza, ...toppings)
-	// pizza = append(toppings, "onions")
-	// toppings = append(pizza, extra cheese)
+	var pizza []string
+	toppings = append(toppings, toppings...)
+	toppings = append(toppings, "onions")
+	pizza = append(toppings, "extra cheese")
 
-	// fmt.Printf("pizza       : %s\n", pizza)
+	fmt.Printf("pizza       : %s\n", pizza)
 }
