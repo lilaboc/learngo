@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Slicing the Housing Prices
 //
@@ -133,4 +139,52 @@ Istanbul,500,10,5,1000000`
 
 		separator = ","
 	)
+
+	headers := []string{}
+	datas := [][]string{}
+	for i, row := range strings.Split(data, "\n") {
+		if i == 0 {
+			headers = strings.Split(row, separator)
+		} else {
+			datas = append(datas, strings.Split(row, separator))
+		}
+	}
+	//fmt.Println(headers)
+	//fmt.Println(datas)
+	start := 0
+	end := len(headers)
+	if len(os.Args) > 1 {
+		val := find(headers, os.Args[1])
+		if val != -1 {
+			start = val
+		}
+	}
+	if len(os.Args) > 2 {
+		val := find(headers, os.Args[2])
+		if val != -1 {
+			end = val + 1
+		}
+	}
+	fmt.Println(headers)
+	for _, v := range headers[start:end] {
+		fmt.Printf("%-15s", v)
+	}
+	fmt.Println()
+	for _, row := range datas {
+		for _, v := range row[start:end] {
+			fmt.Printf("%-15s", v)
+		}
+		fmt.Println()
+	}
+	fmt.Println()
+
+}
+
+func find(arr []string, val string) int {
+	for i, v := range arr {
+		if val == v {
+			return i
+		}
+	}
+	return -1
 }
