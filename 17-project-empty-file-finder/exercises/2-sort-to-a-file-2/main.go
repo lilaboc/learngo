@@ -65,8 +65,8 @@ func main() {
 	sort.Strings(items)
 
 	var data []byte
-	for _, s := range items {
-		data = append(data, s...)
+	for i, s := range items {
+		data = append(data, fmt.Sprintf("%d. %s", i+1, s)...)
 		data = append(data, '\n')
 	}
 
