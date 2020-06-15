@@ -68,6 +68,10 @@ func main() {
 	lyric := strings.Fields(`all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay`)
 
 	// ADD YOUR CODE BELOW:
+	lyric = append([]string{"yesterday"}, lyric...)
 	// ...
+	lyric = append(lyric[:8], append(lyric[13:], lyric[8:13]...)...)
+
+	lyric = append(lyric[:])
 	fmt.Printf("%s\n", lyric)
 }

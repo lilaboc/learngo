@@ -78,7 +78,16 @@ func main() {
 	//
 	// ~~~ CHANGE THIS CODE ~~~
 	//
-	fix := lyric
+	fix := make([]string, len(lyric)+3)
+	cuts := []int{9, 19, 23}
+	start := 0
+	for i, v := range cuts {
+		copy(fix[start+1:v+i], lyric[start:v])
+		fix[v] = "\n"
+		start = v
+	}
+
+	//fix := lyric
 	//
 	// ===================================
 

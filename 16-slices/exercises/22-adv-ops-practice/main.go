@@ -31,7 +31,8 @@ func main() {
 	//
 	//
 	// ...
-	// s.Show("1st step", names)
+	names := make([]string, 0, 5)
+	s.Show("1st step", names)
 
 	// ########################################################
 	//
@@ -45,7 +46,8 @@ func main() {
 	//
 	//
 	// ...
-	// s.Show("2nd step", names)
+	names = append(names, "einstein", "tesla", "aristo")
+	s.Show("2nd step", names)
 
 	// ########################################################
 	//
@@ -76,11 +78,13 @@ func main() {
 	//
 	//
 	// Array (uncomment):
-	// moreNames := [...]string{"plato", "khayyam", "ptolemy"}
+	moreNames := [...]string{"plato", "khayyam", "ptolemy"}
+	names = names[:cap(names)]
+	copy(names[3:], moreNames[:2])
 	//
 	// ...
 	//
-	// s.Show("4th step", names)
+	s.Show("4th step", names)
 
 	// ########################################################
 	//
@@ -97,10 +101,13 @@ func main() {
 	//
 	//
 	// ...
-	// s.Show("5th step (before append)", clone)
+	clone := make([]string, 3, 5)
+	copy(clone, names[:3])
+	s.Show("5th step (before append)", clone)
 	//
 	// ...
-	// s.Show("5th step (after append)", clone)
+	clone = append(clone, names[:2]...)
+	s.Show("5th step (after append)", clone)
 
 	// ########################################################
 	//
@@ -121,7 +128,10 @@ func main() {
 	//
 	//
 	// ...
-	// s.Show("6th step", clone, sliced)
+	sliced := clone[2:5]
+	sliced = append(sliced, "hupatia")
+	clone[2] = "elder"
+	s.Show("6th step", clone, sliced)
 }
 
 //
