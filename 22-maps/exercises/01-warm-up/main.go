@@ -30,17 +30,41 @@ func main() {
 	// #1
 	// Key        : Last name
 	// Element    : Phone number
+	phones := map[string]string{
+		"Wei": "7429",
+		"YQ":  "7706",
+	}
 
 	// #2
 	// Key        : Product ID
 	// Element    : Available / Unavailable
+	availabiltiy := map[string]bool{
+		"123": false,
+		"321": true,
+	}
 
 	// #3
 	// Key        : Last name
 	// Element    : Phone numbers
+	mphone := map[string][]string{
+		"Wei": {"7429", "5695"},
+		"YQ":  {"7706", "7707"},
+	}
 
 	// #4
 	// Key        : Customer ID
 	// Element Key:
 	//   Key: Product ID Element: Quantity
+
+	basket := map[string]map[string]int{
+		"A": {
+			"Banana": 1,
+			"Apple":  2,
+		},
+	}
+	_ = phones
+	_ = availabiltiy
+	_ = mphone
+	_ = basket
+
 }
