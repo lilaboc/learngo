@@ -8,6 +8,13 @@
 
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Uppercaser
 //
@@ -25,4 +32,8 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	s := bufio.NewScanner(os.Stdin)
+	for s.Scan() {
+		fmt.Println(strings.ToUpper(s.Text()))
+	}
 }
